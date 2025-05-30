@@ -52,6 +52,9 @@ describe('Apartment Service', () => {
         unitNumber: '101',
         project: 'Oasis',
         description: 'Nice view',
+        price: '7000000',
+        address: '',
+        space: '120 m^2'
       };
 
       const created = { ...dto, id: 1 };
@@ -71,6 +74,9 @@ describe('Apartment Service', () => {
         name: 'Apt X',
         unitNumber: '999',
         project: 'Ghost',
+        address: '',
+        price: '',
+        space: ''
       };
 
       const created = { ...dto, id: 99 };

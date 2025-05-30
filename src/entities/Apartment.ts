@@ -6,7 +6,6 @@ export class Apartment {
     id!: number;
 
   @Column()
-    @Index()
     name!: string;
 
   @Column()
@@ -14,6 +13,15 @@ export class Apartment {
 
   @Column()
     project!: string;
+
+  @Column({ nullable: true })
+    price!: string;
+
+  @Column({ nullable: true })
+    space!: string;
+
+  @Column({ nullable: true })
+    address!: string;
 
   @Column({ nullable: true })
     description!: string;

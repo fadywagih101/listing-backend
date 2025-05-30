@@ -2,12 +2,17 @@ import 'reflect-metadata';
 import express from 'express';
 import { AppDataSource } from './database/data-source';
 import apartmentRoutes from './routes/apartment.routes';
+import cors from 'cors';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
+
+app.use(cors({
+  origin: 'http://localhost:3000',
+}));
 
 app.use('/api/apartments', apartmentRoutes);
 
