@@ -26,3 +26,6 @@ From the listing-backend/ directory:
 docker-compose up --build
 Backend will be accessible at:
 http://localhost:4001/api/apartments
+
+## For the api documentation:
+http://localhost:4001/api-docs/
