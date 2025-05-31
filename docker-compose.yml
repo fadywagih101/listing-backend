@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4001:4000"
+    environment:
+      - DB_HOST=host.docker.internal
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=123456789
+      - DB_NAME=apartments
+    working_dir: /app
+    depends_on: []
+
+  frontend:
+    build:
+      context: ../listing-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3000"
+    environment:
+    - NEXT_PUBLIC_API_URL=http://localhost:4001/api
+    working_dir: /app
